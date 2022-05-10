@@ -46,7 +46,7 @@
         </plugins>
     </build>
     <scm>
-        <developerConnection>scm:git:git@github.com:macslowiak/spring-course-learning-petclinic.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/macslowiak/spring-course-learning-petclinic.git</developerConnection>
     </scm>
 
 </project>
