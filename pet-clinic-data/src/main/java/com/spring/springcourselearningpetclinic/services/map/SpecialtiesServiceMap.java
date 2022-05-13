@@ -1,13 +1,13 @@
 package com.spring.springcourselearningpetclinic.services.map;
 
 import com.spring.springcourselearningpetclinic.model.Speciality;
-import com.spring.springcourselearningpetclinic.services.SpecialtiesService;
+import com.spring.springcourselearningpetclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtiesServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
+public class SpecialtiesServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtyService {
 
 
 
