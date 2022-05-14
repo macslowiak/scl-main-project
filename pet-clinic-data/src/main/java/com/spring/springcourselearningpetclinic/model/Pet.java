@@ -19,14 +19,14 @@ public class Pet extends BaseEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "type_id")
+    @JoinColumn(name = "petType_id")
     private PetType petType;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Column(name = "brit_date")
+    @Column(name = "brith_date")
     private LocalDate brithDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
