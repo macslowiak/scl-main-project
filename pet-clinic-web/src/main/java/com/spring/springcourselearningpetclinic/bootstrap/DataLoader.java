@@ -5,10 +5,12 @@ import com.spring.springcourselearningpetclinic.model.Pet;
 import com.spring.springcourselearningpetclinic.model.PetType;
 import com.spring.springcourselearningpetclinic.model.Speciality;
 import com.spring.springcourselearningpetclinic.model.Vet;
+import com.spring.springcourselearningpetclinic.model.Visit;
 import com.spring.springcourselearningpetclinic.services.OwnerService;
 import com.spring.springcourselearningpetclinic.services.PetTypeService;
 import com.spring.springcourselearningpetclinic.services.SpecialtyService;
 import com.spring.springcourselearningpetclinic.services.VetService;
+import com.spring.springcourselearningpetclinic.services.VisitService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -21,12 +23,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -94,6 +98,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(mateuszPet);
 
         ownerService.save(owner2);
+
+        Visit visit1 = new Visit();
+        visit1.setDate(LocalDate.of(2009, 3, 12));
+        visit1.setDescription("Tooth cleaning");
+        visit1.setPet(maciejPet);
+
+        visitService.save(visit1);
 
         System.out.println("--- Owners loaded ---");
 
