@@ -1,7 +1,6 @@
 package com.spring.springcourselearningpetclinic.services.map;
 
 import com.spring.springcourselearningpetclinic.model.Owner;
-import com.spring.springcourselearningpetclinic.model.Pet;
 import com.spring.springcourselearningpetclinic.services.OwnerService;
 import com.spring.springcourselearningpetclinic.services.PetService;
 import com.spring.springcourselearningpetclinic.services.PetTypeService;
