@@ -90,12 +90,21 @@ public class DataLoader implements CommandLineRunner {
         owner2.setCity("Kraków");
         owner2.setTelephone("432543623");
 
-        Pet mateuszPet = new Pet();
-        mateuszPet.setName("Hania");
-        mateuszPet.setPetType(savedCatPetType);
-        mateuszPet.setOwner(owner2);
-        mateuszPet.setBrithDate(LocalDate.of(2016, 2, 1));
+        Pet mateuszPet = Pet.builder()
+                .name("Hania")
+                .brithDate(LocalDate.of(2016, 2, 1))
+                .petType(savedCatPetType)
+                .owner(owner2)
+                .build();
         owner2.getPets().add(mateuszPet);
+
+        Pet mateuszPet2 = Pet.builder()
+                .name("Szarek")
+                .brithDate(LocalDate.of(2017, 4, 3))
+                .petType(savedDogPetType)
+                .owner(owner2)
+                .build();
+        owner2.getPets().add(mateuszPet2);
 
         ownerService.save(owner2);
 
